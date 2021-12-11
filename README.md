@@ -97,31 +97,61 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible?
+
+  Advantage of automating with ansible is having consistent configuration management, in other words, you won't have to configure the applications on every machine manually. 
 
 The playbook implements the following tasks:
 
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+
+- Specify a different group of machines:
+
+  ![elk- diff group machine](C:\Users\annam\OneDrive\Documents\README\README\Images\elk- diff group machine.PNG)
+
+- Install Docker.io
+
+  ![install docker.io](C:\Users\annam\OneDrive\Documents\README\README\Images\install docker.io.PNG)
+
+- Install Python-pip
+
+  ![python3-pip](C:\Users\annam\OneDrive\Documents\README\README\Images\python3-pip.PNG)
+
+- Install Virtual Memory
+
+  ![virtual memory](C:\Users\annam\OneDrive\Documents\README\README\Images\virtual memory.PNG)
+
+- Dowload and Launch ELK Docker Container
+
+  ![d&l elk docker container](C:\Users\annam\OneDrive\Documents\README\README\Images\d&l elk docker container.PNG)
+
+- Published ports 5044, 561 and 9200 were made available
+
+  ![published ports](C:\Users\annam\OneDrive\Documents\README\README\Images\published ports.PNG)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](C:\Users\annam\AppData\Local\Temp\Temp1_README.zip\README\Images\docker_ps_output.png)
+ELKserver:
+
+![docker ps elk](C:\Users\annam\OneDrive\Documents\README\README\Images\docker ps elk.PNG)
 
 ### Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
 
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1: 10.0.0.5
+- Web-2: 10.0.0.6
+- Web-3: 10.0.0.7
 
 We have installed the following Beats on these machines:
 
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat is used to collect log files from specific files such as Microsoft Azure, Apache and webservers, MySQL databases.
+- Metricbeat is used to monitor VM stats, per CPU core stats, per filesystem stats, memory stats and network stats.
 
 ### Using the Playbook
 
@@ -129,8 +159,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the Playbook file to /etc/ansible folder.
+- Update the ___hosts__ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
